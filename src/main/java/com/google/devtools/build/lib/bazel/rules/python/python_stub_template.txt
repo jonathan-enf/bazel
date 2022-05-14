@@ -114,6 +114,8 @@ def FindModuleSpace():
 
     # bazel pyz archives create a directory named "runfiles".  Try that next:
     runfiles_pattern = r'(.*' + slash_pattern + 'runfiles)' + slash_pattern + '.*'
+    print("looking for runfiles stub", stub_filename)
+    print("pattern %r" % runfiles_pattern)
     matchobj = re.match(runfiles_pattern, stub_filename)
     if matchobj:
       return matchobj.group(1)
